@@ -1,0 +1,9 @@
+
+以学校官网deepseek平台为例
+
+提问如下：
+
+请给出web后端项目代码，实现高校社团信息和社团成员信息CRUD功能，技术栈：spring boot3.4.3、jdk17、MySQL、mybatis、maven项目管理、SQL独立文件，引入lombok简化实体类。club（id,name,logo,description ）,member(id,name,clubId),为club提供logo图片的上传下载功能。
+
+
+过程中如果代码不完整   再次提问两个字： “继续”  或者 “ XX文件中断，继续”

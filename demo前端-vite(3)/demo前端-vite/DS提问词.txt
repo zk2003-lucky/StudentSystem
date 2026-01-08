@@ -1,0 +1,9 @@
+
+以学校官网deepseek平台为例
+
+提问如下：
+
+给出web前端项目代码，基于vue3，使用setup语法糖写法，通过axios实现与web后端交互，后端提供了高校社团信息和社团成员信息CRUD服务，club（id,name,logo,description ）,member(id,name,clubId),为club提供logo图片的上传下载功能。
+
+
+过程中如果代码不完整   再次提问两个字： “继续”  或者 “ XX文件中断，继续”

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+    <mapper namespace="com.example.clubmanagement.mapper.UserMapper">
+
+        <resultMap id="UserResultMap" type="com.example.clubmanagement.entity.User">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <collection property="roles" ofType="java.lang.String">
+                <result column="role"/>
+            </collection>
+        </resultMap>
+
+        <select id="findByUsername" resultMap="UserResultMap">
+            SELECT u.id, u.username,u.password,ur.role FROM users u LEFT JOIN user_role ur ON u.id = ur.userid WHERE u.username = #{username}
+        </select>
+
+        <select id="findByUserId" resultMap="UserResultMap">
+            SELECT u.id, u.username,u.password,ur.role FROM users u LEFT JOIN user_role ur ON u.id = ur.userid WHERE u.id = #{userid}
+        </select>
+
+    <insert id="insertUser" parameterType="com.example.clubmanagement.entity.User"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO users (username, password)
+        VALUES (#{username}, #{password})
+    </insert>
+
+    <insert id="insertUserRole">
+        INSERT INTO user_role (userid, role)  <!-- 字段名改为小写 -->
+        VALUES (#{userId}, #{role})
+    </insert>
+    </mapper>
